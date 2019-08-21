@@ -143,8 +143,16 @@ input[type="text"] {
     border: 2px solid #1C3334;
 }
 
-.schedule {
+.section {
+  padding-top: 12px;
+}
+
+.indent {
   padding-left: 16px ;
+}
+
+.labs {
+  padding-top: 8px;
 }
 
 .center {
