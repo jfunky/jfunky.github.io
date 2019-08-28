@@ -151,6 +151,11 @@ input[type="text"] {
   padding-left: 16px ;
 }
 
+.caption {
+  text-align: center;
+  font-size: 13px ;  
+}
+
 .labs {
   padding-top: 8px;
 }
