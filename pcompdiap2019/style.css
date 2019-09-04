@@ -180,6 +180,15 @@ input[type="text"] {
   padding: 10px;
 }
 
+.image_75 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding: 10px;
+}
+
+
 .image_half {
   display: block;
   margin-left: auto;
