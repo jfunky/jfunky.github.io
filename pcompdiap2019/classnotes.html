@@ -81,6 +81,8 @@
             <p><strong>Diode</strong>: Allow electricity to flow in one direction but not another direction. Diodes are one kind of <strong>polarized</strong> component, which means they can only be connected in a circuit in one direction.</p>
             <p><strong>LED</strong>: Light Emitting Diodes emit light, and are polarized like all diodes.</p>
             <p><strong>Capacitor</strong>: Store electrical energy while it's being provided, and then release it when it stops. <strong>Decoupling</strong> capacitors are capacitors used to to smooth electricity flow in a circuit. Capacitors can be polarized or unpolarized.</p>
+            <p><strong>Transistor</strong>: An electronic switch. Transistors have three terminals: collector, base (responsible for activating flow between the collector and emitter), and emitter (connects to ground); or source (connects to ground), gate (responsible for activating flow between the source and drain), drain (for MOSFETS). They are often used to have a small amount of energy (an electronic signal) control a larger amount of energy.</p>
+            <p><strong>Potentiometer</strong>: A variable resistor.</p>
             <p><strong>Wire</strong>: A conductive material wrapped in an insulated material used to connect components. They can generally be thought of as having zero resistance.</p>
             <p><strong>Solderless breadboard</strong>: An resuable prototyping material that allows you to create easy electrical connections.</p>
             <p><strong>Battery holder</strong>: Connect to the positive and negative poles of a battery for easy connection to your circuit.</p>
@@ -110,7 +112,8 @@
           <h3> References </h3>
           <div class="indent">
             <p><a href=https://learn.sparkfun.com/tutorials/how-to-read-a-schematic/all>Sparkfun Reading schematics page</a></p>
-            <p><a href="https://itp.nyu.edu/physicalcomputing/videos/videos-schematic-diagrams/">ITP Video: Schematic Diagrams</a></p>    
+            <p><a href="https://itp.nyu.edu/physicalcomputing/videos/videos-schematic-diagrams/">ITP Videos: Schematic Diagrams</a></p> 
+            <p><a href="https://fritzing.org/home/">Fritzing</a></p>   
           </div>    
       </div> <!-- Notes div  -->
 
@@ -122,7 +125,7 @@
           <div class="indent">
 
             <p>Basic Circuit:</p><img class="image_half" alt="Basic circuit schematic" src="schematics/Basic_p49.png">
-            <p>Series Circuit: In a series circuit, energy flows from one component to the next component. Components draw voltage, and the voltage drops. The amount of current going into any component is the same as the current coming out.</p><img class="image_half" alt="Series circuit schmatic" src="schematics/Series_p49.png">
+            <p>Series Circuit: In a series circuit, energy flows from one component to the next component. Components draw voltage, and the voltage drops. In a simple DC circuit, the sum of the voltage drops across each component must equal the source voltage (Kirchoff's Voltage Law). The amount of current going into any component is the same as the current coming out (Kirchoff's Current Law).</p><img class="image_half" alt="Series circuit schmatic" src="schematics/Series_p49.png">
             <p>Parallel Circuit: Components are in parellel when energy flows through them at the same time. Voltage across components wired this way is the same, but the current is divided between them.</p><img class="image_half" alt="Parallel circuit schematic" src="schematics/Parallel_p49.png">
             <p>Combined Series & Parallel Circuit:</p><img class="image_half" alt="Combined circuit schmatic" src="schematics/Combined_p50.png">
             <p class="caption"><i>Practical Electronics for Inventors</i> p.49-50</p>
@@ -136,38 +139,79 @@
 
           <h3> Notes </h3>
             <div class="indent">
-              <p>"Ohm's Law" refers to the relationship Georg Simon Ohm observed regarding the behavior of materials: that there is a linear relationship between how much current flows through material when voltage is applied across it. It is defined as:</p>
+              <p>"Ohm's Law" refers to the relationship Georg Simon Ohm observed regarding the behavior of materials: that there is a linear relationship between how much current flows through material when a given voltage is applied across it. It is resistance defined in terms of the ratio of applied voltage and resultant current flow:</p>
               <p><strong> R = V/I </strong> where R is Resistance (Ohms); V is Voltage (Volts); I is Current (Amps)</p>
-              <p>For circuit analysis you can predict what voltage must exist across a known resistance and measured current using <strong> V=IR </strong> and similarly predice amperage across a known resistance and measured voltage using <strong> I=V/R.</p>
+              <p>One ohm is the resistance through which 1 Amp flows when 1 Volt is applied. For circuit analysis you can predict what voltage must exist across a known resistance and measured current using <strong> V=IR </strong> and similarly predict amperage across a known resistance and measured voltage using <strong> I=V/R.</strong>(For a given voltage, more resistance means less current.)</p>
               <img class="image_half" alt="Ohm's Law presented as V=IR, I=V/R, and R=V/I" src="https://upload.wikimedia.org/wikipedia/commons/5/5f/Ohm%27s_law_triangle_%28VIR%29.jpg">
               <p class="caption"><i>Wikipedia</i></p>
             </div> 
+
+          <h3> Applying Ohm's Law </h3>
+            <div class="indent">
+              <p>Consider the circuit we built last week in class:</p>
+              <img class="image_half" alt="A 5V circuit diagram showing a 3.3V drop across a 220ohm resistor and a 1.7V drop across an LED." src="schematics/Annotated_VoltageDrop.png">
+              <p>If we measure the voltage drop of the resistor, and know the resistor value in ohms, we can calculate the current running through it.</p>
+              <div class="center">
+                <p>I=V/R</p>
+                <p>I=3.3/220Ω</p>
+                <p>0.015A or 15mA.</p>
+              </div>
+              <p>If we know the supply voltage, the required forward voltage of our LED, and the desired current for the LED (from the data sheet), we can calculate the ideal resistor value.</p>
+              <div class="center">
+                <p>I=V<sub>S</sub>-V<sub>F</sub>/R</p>
+                <p>R = 3.3V/0.020A </p>
+                <p>R = 165Ω </p>
+              </div>
+            </div>           
 
           <h3> References </h3>
           <div class="indent">
             <p><a href="https://vimeo.com/showcase/2801639/video/76442432"> ITP Video: Ohm's Law Part 1</a></p>
             <p><a href="https://vimeo.com/76442431">ITP Video: Ohm's Law Part 2</a></p>
             <p><a href="https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/ohms-law">Sparkfun's page on Voltage, Current, Resistance, and Ohm's Law</a> plus <a href="https://learn.sparkfun.com/tutorials/voltage-current-resistance-and-ohms-law/res"> additional links</a>.</p>
+            <p><a href="https://vimeo.com/showcase/2801639/video/78674965">ITP Video: LED Current</a></p>
+            <p><a href="http://led.linear1.org/led.wiz">LED Resistor Calculator</a></p>
+            <p>
           </div>     
 
       </div> <!-- Notes div  -->
-
 
       <div class="section">                
         <h2> Digital I/O </h2>
 
          <h3> Notes </h3>
           <div class="indent">
-            <p>Electricity as power vs. electronics as signal</p>
-            <!-- https://vimeo.com/102558686 -->
+            <p>Electricity as power vs. electronics as signal: With some logic, we can use electricity as a signal. For example, we can read a digital input from an Arduino pin as "HIGH" (5V) and do something based on this information, in contrast to when it is 0V ("LOW"). </p>
+            <p>Arduino pins also allow us to "write" or output binary values of 5V or 0V. Think back to when we used the 5 volt output as a power source for an LED. All of the digital pins can do the same thing--the difference is you can control this with code.
+            <p>Digital inputs are binary, which means they only have two states. Analog inputs can have a range of values.</p>
+            <p>When we configure Arduino pins as inputs, it is important to use a <strong>pulldown</strong> (connected to ground) or <strong>pullup</strong> (connected to V+) resistor. This does a few things: (1) It protects your circuit from a short; (2) It prevents a "floating ground", which is when there is no electrical connection to ground; (3) It creates a path of resistance when the circuit is closed, so the arduino can read the voltage.</p>
+            <p>Arduino: A microcontroller development board: The microcontroller we are using with an Arduino development board is a Atmel Atmega328P chip. Compared with other computers that can run whole operating systems, microcontroller are firmware-only processors. No processor can run by itself: it needs components like a voltage regular and external clock to keep time. The Arduino board provides all the components you need in order to easily connect input and outputs. It runs just one program which you can easily change using the Arduino development environment.
+            <p>
+            <img class="image" alt="Overview of arduino pinout sections" src="schematics/ArduinoOverview.jpg">
+            <img class="image" alt="Arduino pinout diagram" src="schematics/ArduinoPinOut.png">
           </div>
           <h3> References </h3>
           <div class="indent">
-            <p><a href="https://www.arduino.cc/en/Reference/VariableDeclaration">Variables</a></p>
+            <p>Pinout diagrams from: <a href="https://www.theengineeringprojects.com/2018/06/introduction-to-arduino-uno.html">Introduction to Arduino</a></p>
+            <p><a href="https://itp.nyu.edu/physcomp/lessons/microcontrollers/microcontrollers-the-basics/">ITP Lab: Microcontrollers: The Basics</a></p>
+            <p><a href="https://www.arduino.cc/en/Reference/VariableDeclaration"> Arduino Reference: Variables</a></p>
+            <p><a href="https://www.arduino.cc/en/Tutorial/DigitalPins">Arduino Reference: Digital Pins</a></p>
+            <p><a href="https://www.arduino.cc/reference/en/">Arduino Language Reference</a>
+            <p><a href="https://itp.nyu.edu/physcomp/lessons/programming/variables/">ITP Lesson: Variables</a></p>
           </div>  
 
       </div> <!-- Notes div  -->
           
+      <div class="section">
+        <h2> Analog Input </h2>
+
+      </div>
+
+      <div class="section">
+        <h2> Datasheets </h2>
+          <!-- https://vimeo.com/102558686 -->
+
+      </div>
 
       </div>
     </div>
