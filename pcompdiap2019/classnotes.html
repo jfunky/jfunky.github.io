@@ -157,7 +157,7 @@
           <h3> Applying Ohm's Law </h3>
             <div class="indent">
               <p>Consider the circuit we built last week in class:</p>
-              <img class="image_half" alt="A 5V circuit diagram showing a 3.3V drop across a 220ohm resistor and a 1.7V drop across an LED." src="schematics/Annotated_VoltageDrop.png">
+              <img class="image_half" alt="A 5V circuit diagram showing a 3.3V drop across a 220ohm resistor and a 1.7V drop across an LED." src="schematics/AnnotatedVoltageDrop.jpg">
               <p>If we measure the voltage drop of the resistor, and know the resistor value in ohms, we can calculate the current running through it.</p>
               <div class="center">
                 <p>I=V/R</p>
@@ -193,7 +193,7 @@
             <p>Arduino pins also allow us to "write" or output binary values of 5V or 0V. Think back to when we used the 5 volt output as a power source for an LED. All of the digital pins can do the same thing--the difference is you can control this with code.
             <p>Digital inputs are binary, which means they only have two states. Analog inputs can have a range of values.</p>
             <p>When we configure Arduino pins as inputs, it is important to use a <strong>pulldown</strong> (connected to ground) or <strong>pullup</strong> (connected to V+) resistor. This does a few things: (1) It protects your circuit from a short; (2) It prevents a "floating ground", which is when there is no electrical connection to ground; (3) It creates a path of resistance when the circuit is closed, so the arduino can read the voltage.</p>
-            <p>Arduino: A microcontroller development board: The microcontroller we are using with an Arduino development board is a Atmel Atmega328P chip. Compared with other computers that can run whole operating systems, microcontroller are firmware-only processors. No processor can run by itself: it needs components like a voltage regular and external clock to keep time. The Arduino board provides all the components you need in order to easily connect input and outputs. It runs just one program which you can easily change using the Arduino development environment.
+            <p>Arduino: A microcontroller development board: The microcontroller we are using with an Arduino development board is a Atmel Atmega328P chip. Compared with other computers that can run whole operating systems, microcontroller are firmware-only processors. No processor can run by itself: it needs components like a voltage regulator and external clock to keep time. The Arduino board provides all the components you need in order to easily connect input and outputs. It runs just one program which you can easily change using the Arduino development environment.
             <p>
             <img class="image" alt="Overview of arduino pinout sections" src="schematics/ArduinoOverview.jpg">
             <img class="image" alt="Arduino pinout diagram" src="schematics/ArduinoPinOut.png">
