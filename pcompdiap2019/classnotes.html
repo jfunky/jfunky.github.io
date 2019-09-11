@@ -33,7 +33,20 @@
 
         <h1> Class Notes </h1>
 
-        <div class="section">
+        <h3>Skip to topic:</h3>
+        <p class="indent">
+          <a href="classnotes.html#E-Basics">Electricity & Circuits</a> ||
+          <a href="classnotes.html#components">Components</a> || 
+          <a href="classnotes.html#schematics">Schematic Diagrams</a> ||  
+          <a href="classnotes.html#circuits">Series vs. Series Circuits</a> || 
+          <a href="classnotes.html#ohm">Ohm's Law</a> || 
+          <a href="classnotes.html#digitalIO">Digital I/O</a> || 
+          <a href="classnotes.html#analogIn">Analog Input</a> || 
+          <a href="classnotes.html#datasheets">Datasheets</a> || 
+          <a href="classnotes.html#analogOut">Analog Output</a> 
+        </p>
+
+        <div class="section" id="E-Basics" name="E-Basics">
           <h2> Electricity & Circuits </h2>
 
           <h3> Terms </h3>
@@ -68,7 +81,7 @@
           </div>
       </div> <!-- Notes div  -->
 
-      <div class="section">
+      <div class="section" id="components" name="components">
         <h2> Components </h2>
 
           <h3> (Non-exhaustive!) List </h3>
@@ -103,7 +116,7 @@
           </div>        
       </div> <!-- Notes div  -->
 
-      <div class="section">        
+      <div class="section" id="schematics" name="schematics">        
         <h2> Schematic Diagrams </h2>
 
           <h3> Notes </h3>
@@ -126,8 +139,8 @@
       </div> <!-- Notes div  -->
 
 
-      <div class="section">        
-        <h2> Parallel vs. series circuits </h2>
+      <div class="section" id="circuits" name="circuits" >        
+        <h2> Parallel vs. Series Circuits </h2>
 
           <h3> Notes </h3>
           <div class="indent">
@@ -142,7 +155,7 @@
       </div> <!-- Notes div  -->
 
 
-      <div class="section">                
+      <div class="section" id = "ohm" name="ohm">                
         <h2> Ohm's Law </h2>
 
           <h3> Notes </h3>
@@ -184,7 +197,7 @@
 
       </div> <!-- Notes div  -->
 
-      <div class="section">                
+      <div class="section" id="digitalIO" name="digitalIO">                
         <h2> Digital I/O </h2>
 
          <h3> Notes </h3>
@@ -214,14 +227,14 @@
 
       </div> <!-- Notes div  -->
           
-      <div class="section">
+      <div class="section" id="analogIn" name="analogIn" >
         <h2> Analog Input </h2>
          <h3> Notes </h3>
           <div class="indent">
             <p>The Arduino's Analog pins (on the Arduino Uno, these are A0-A5) allow us to input or "read" a range of values from 0-1023 via the <a href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/">analogRead()</a> command.</p>
             <p>You cannot use the analog pins to output analog signals.</p>
-            <p>Similarly to a digital input circuit where you are trying to read the value of a switch or button (which requires a pullup or pulldown resistor), most analog sensors require a resistor divider in series with the sensor, where the measurement point is between the resistors. Some sensors already have circuitry (they may even include an integrated circuit) built in that means their wiring is an exception to this. You must check the data sheets for your sensors.</p>
-            <p>A potentiometer is a <strong>variable resistor</strong> that works with an internal wiper. It doesn't require an additional resistor because one leg acts as that resistor.</p>
+            <p>Similarly to a digital input circuit where you are trying to read the value of a switch or button (which requires a pullup or pulldown resistor), most analog sensors (resistive sensors/variable resistors) require a resistor divider in series with the sensor, where the measurement point is between the resistors. Some sensors already have circuitry (they may even include an integrated circuit) built in that means their wiring is an exception to this. You must check the data sheets for your sensors.</p>
+            <p>A potentiometer is an exception, as a variable resistor that works with an internal wiper, it doesn't require an additional resistor because one leg acts as that resistor.</p>
             <img class="image_75" alt="A photocell connected to the A0 Pin on an Arduino with a resistor divider" src="schematics/PhotoCellA0.png">
             <p>Above is an example wiring for a photocell, a sensor that requires a resistor divider in order to have a value read by the Arduino (from the <a href="https://www.arduino.cc/en/tutorial/AnalogInput">Arduino reference site</a>).</p>
             <img class="image_half" alt="Arduino pinout diagram" src="schematics/IRDistanceSensor.png">
@@ -241,7 +254,7 @@
           </div>  
       </div>
 
-      <div class="section">
+      <div class="section" id="datasheets" name="datasheets">
         <h2> Datasheets </h2>
          <h3> Notes </h3>
           <div class="indent">
@@ -261,7 +274,7 @@
           </div>  
       </div>
 
-      <div class="section">
+      <div class="section" id="analogOut" name="analogOut">
         <h2> Analog Output </h2>
          <h3> Notes </h3>
           <div class="indent">
@@ -281,6 +294,19 @@
             <p><a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation/all">Sparkfun PWM Tutorial</a>
           </div>  
       </div>
+
+      <br><h3>Skip to topic:</h3>
+        <p class="indent">
+          <a href="classnotes.html#E-Basics">Electricity & Circuits</a> ||
+          <a href="classnotes.html#components">Components</a> || 
+          <a href="classnotes.html#schematics">Schematic Diagrams</a> ||  
+          <a href="classnotes.html#circuits">Series vs. Series Circuits</a> || 
+          <a href="classnotes.html#ohm">Ohm's Law</a> || 
+          <a href="classnotes.html#digitalIO">Digital I/O</a> || 
+          <a href="classnotes.html#analogIn">Analog Input</a> || 
+          <a href="classnotes.html#datasheets">Datasheets</a> || 
+          <a href="classnotes.html#analogOut">Analog Output</a> 
+        </p>
 
       </div>
     </div>
