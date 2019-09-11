@@ -190,11 +190,14 @@
          <h3> Notes </h3>
           <div class="indent">
             <p>Electricity as power vs. electronics as signal: With some logic, we can use electricity as a signal. For example, we can read a digital input from an Arduino pin as "HIGH" (5V) and do something based on this information, in contrast to when it is 0V ("LOW"). </p>
-            <p>Arduino pins also allow us to "write" or output binary values of 5V or 0V. Think back to when we used the 5 volt output as a power source for an LED. All of the digital pins can do the same thing--the difference is you can control this with code.
+            <p>Arduino pins also allow us to "write" or output binary values of 5V or 0V. Think back to when we used the 5 volt output as a power source for an LED. All of the digital pins can do the same thing--the difference is you can control this with code: you can tell the Arduino to supply 5V or 0V to a particular pin.
+            <p>
+            <p>The digital pins (on the Arduino Uno these are: 0-13) on an Arduino can input and output digital information via the <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/">digitalRead()</a> and <a href="https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/">digitalWrite()</a> commands, respectively. </p>
             <p>Digital inputs are binary, which means they only have two states. Analog inputs can have a range of values.</p>
             <p>When we configure Arduino pins as inputs, it is important to use a <strong>pulldown</strong> (connected to ground) or <strong>pullup</strong> (connected to V+) resistor. This does a few things: (1) It protects your circuit from a short; (2) It prevents a "floating ground", which is when there is no electrical connection to ground; (3) It creates a path of resistance when the circuit is closed, so the arduino can read the voltage.</p>
             <p>Arduino: A microcontroller development board: The microcontroller we are using with an Arduino development board is a Atmel Atmega328P chip. Compared with other computers that can run whole operating systems, microcontroller are firmware-only processors. No processor can run by itself: it needs components like a voltage regulator and external clock to keep time. The Arduino board provides all the components you need in order to easily connect input and outputs. It runs just one program which you can easily change using the Arduino development environment.
             <p>
+            <p>In order to see the values you're receiving with Arduino, use the <a href="https://create.arduino.cc/projecthub/glowascii/serial-monitor-arduino-basics-399eb6">Serial Monitor</a>. In addition to introduce the serial monitor, the link shows how to include Serial.begin in your setup() function and Serial.println() in your loop in order to print digital values.</p> 
             <img class="image" alt="Overview of arduino pinout sections" src="schematics/ArduinoOverview.jpg">
             <img class="image" alt="Arduino pinout diagram" src="schematics/ArduinoPinOut.png">
           </div>
@@ -206,19 +209,77 @@
             <p><a href="https://www.arduino.cc/en/Tutorial/DigitalPins">Arduino Reference: Digital Pins</a></p>
             <p><a href="https://www.arduino.cc/reference/en/">Arduino Language Reference</a>
             <p><a href="https://itp.nyu.edu/physcomp/lessons/programming/variables/">ITP Lesson: Variables</a></p>
+            <p><a href="https://www.arduino.cc/en/Tutorial/DigitalReadSerial">Digital Read Serial Arduino reference</a> --note this is also available under File>Examples>01.Basics in your Arduino IDE.</p>
           </div>  
 
       </div> <!-- Notes div  -->
           
       <div class="section">
         <h2> Analog Input </h2>
+         <h3> Notes </h3>
+          <div class="indent">
+            <p>The Arduino's Analog pins (on the Arduino Uno, these are A0-A5) allow us to input or "read" a range of values from 0-1023 via the <a href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogread/">analogRead()</a> command.</p>
+            <p>You cannot use the analog pins to output analog signals.</p>
+            <p>Similarly to a digital input circuit where you are trying to read the value of a switch or button (which requires a pullup or pulldown resistor), most analog sensors require a resistor divider in series with the sensor, where the measurement point is between the resistors. Some sensors already have circuitry (they may even include an integrated circuit) built in that means their wiring is an exception to this. You must check the data sheets for your sensors.</p>
+            <p>A potentiometer is a <strong>variable resistor</strong> that works with an internal wiper. It doesn't require an additional resistor because one leg acts as that resistor.</p>
+            <img class="image_75" alt="A photocell connected to the A0 Pin on an Arduino with a resistor divider" src="schematics/PhotoCellA0.png">
+            <p>Above is an example wiring for a photocell, a sensor that requires a resistor divider in order to have a value read by the Arduino (from the <a href="https://www.arduino.cc/en/tutorial/AnalogInput">Arduino reference site</a>).</p>
+            <img class="image_half" alt="Arduino pinout diagram" src="schematics/IRDistanceSensor.png">
+            <p>Above is an example of a <a href="https://www.adafruit.com/product/164">proximity sensor</a> with just 3 pinouts: V<sub>cc</sub> (Voltage input/the supply voltage), V<sub>o</sub> (Voltage output--this is the output you read from your Arduino), and Gnd (Ground).</p>
+            <img class="image_75" alt="Block diagram of proximity sensor" src="schematics/IRDistanceBlock.png">
+            <p>Above is the block diagram of the <a href="http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y0a21yk_e.pdf">proximity sensor datasheet</a> showing pinouts.</p>
+            <p>Just as with digitalRead(), in order to see the values you are receiving in your Serial Monitor with Arduino, you must use the Serial.begin() command in your setup() function, and Serial.println() to print the value.</p>
+          </div>
+          <h3> References </h3>
+          <div class="indent">
 
+          <p><a href="https://itp.nyu.edu/physcomp/lessons/microcontrollers/analog-input/">ITP: Analog Input Notes</a></p>
+          <p><a href="https://itp.nyu.edu/physcomp/labs/labs-arduino-digital-and-analog/analog-in-with-an-arduino/">ITP: Analog In with an Arduino Lab</a></p>
+          <p><a href="https://www.arduino.cc/en/tutorial/AnalogInput">Arduino Analog Input Tutorial</a>
+          <p><a href="https://www.arduino.cc/en/Tutorial/AnalogReadSerial">Analog Read Serial Arduino reference</a>--note this also avaiable under File>Examples>01.Basics in your Arduino IDE.</p>
+          <p><a href="https://itp.nyu.edu/physcomp/lessons/sensors-the-basics/">ITP: Sensors: the Basics</a>
+          </div>  
       </div>
 
       <div class="section">
         <h2> Datasheets </h2>
-          <!-- https://vimeo.com/102558686 -->
+         <h3> Notes </h3>
+          <div class="indent">
+            <p>Datasheets are technical documentation that include important information about how to operate a component. There are actually datasheets for every component we've looked at and worked with in this class. They will usually at minimum include:</p>
+              <ul>
+                <li><p>a summary of the component/sensor and its operation;</p></li>
+                <li><p>a pin diagram;</li>
+                <li><p>a table of electrical characteristics: supply voltage, the operating current, expected output;</li>
+              </ul>
+            <p>Be careful to stay within the sensors operating voltage and current needs. Remember excess current turns into heat--this could damage your sensor or change the operating characteristics.</p>
+          </div>
+          <h3> References </h3>
+          <div class="indent">
+            <p><a href="https://itp.nyu.edu/physcomp/lessons/sensors-the-basics/">ITP: Sensors: the Basics</a>
+            <p><a href="https://vimeo.com/showcase/2801639/video/102558686">ITP Video: Sensors - Datasheets</a></p>
+            <p><a href="https://www.sparkfun.com/tutorials/223">Sparkfun Datasheet Tutorial</a>
+          </div>  
+      </div>
 
+      <div class="section">
+        <h2> Analog Output </h2>
+         <h3> Notes </h3>
+          <div class="indent">
+            <p>Remember that the analog input pins on an Arduino only <strong>read</strong> analog values. As a digital device, Arduino actually can't output an analog signal, it can only <strong>simulate</strong> an analog signal on the Digital PWM ~ pins (on an Arduino Uno these are: 3, 5, 6, 9, 10, 11). You can distinguish them with the ~ next to them.</p>
+            <p><strong>PWM</strong> stands for "pulse width modulation", a technique where the digital signal modulates from on (5V) to off (0V) very quickly. Imagine a very short period of time (let's say 2 milliseconds) where 5V is supplied 25% of the time, and 0V is suppled for 75% of the time. The resulting voltage would be 1/4 of 5V, 1.25V. The period of time where the signal is "on" (5V) is the "pulse." The proportion of the time refers to the "width." The total on-off measurement period (100%, in our example, 2 milliseconds) is called the "duty cycle."
+            <p>Analog Output values written with the analogWrite() function in Arduino can be output on a scale of 0-255, such that 255 requests 100% of the duty cycle. In our example above, requesting 25% of the duty cycle would be analogWrite(64). 50% of the duty cycle would be analogWrite(127), and so on.</p>
+            <p>You can use the analog output functionality to fade an LED, operate a motor, a fan, etc.</p>
+            <img class="image_half" alt="Pulse Width Modulation square waves diagram" src="schematics/PWM.png">
+            <p class="caption">Diagram of square waves showing duty cycles from 0%-100%, from the Arduino PWM Tutorial (linked below).            
+          </div>
+          <h3> References </h3>
+          <div class="indent">
+            <p><a href="https://itp.nyu.edu/physcomp/lessons/microcontrollers/analog-output/#Analog_Output">ITP: Analog Output Notes</a></p>
+            <p><a href="https://vimeo.com/93554355#t=1m06s">ITP Video: Analog Output</a> (including PWM on an oscilloscope)</p>
+            <p><a href="https://www.arduino.cc/en/Tutorial/PWM">Arduino PWM Tutorial</a></p>
+            <p><a href="https://www.arduino.cc/reference/en/language/functions/analog-io/analogwrite/">analogWrite() Arduino reference</p>
+            <p><a href="https://learn.sparkfun.com/tutorials/pulse-width-modulation/all">Sparkfun PWM Tutorial</a>
+          </div>  
       </div>
 
       </div>
