@@ -43,7 +43,9 @@
           <a href="classnotes.html#digitalIO">Digital I/O</a> || 
           <a href="classnotes.html#analogIn">Analog Input</a> || 
           <a href="classnotes.html#datasheets">Datasheets</a> || 
-          <a href="classnotes.html#analogOut">Analog Output</a> 
+          <a href="classnotes.html#analogOut">Analog Output</a> ||
+          <a href="classnotes.html#programming">Programming</a> 
+
         </p>
 
         <div class="section" id="E-Basics" name="E-Basics">
@@ -242,6 +244,8 @@
             <img class="image_75" alt="Block diagram of proximity sensor" src="schematics/IRDistanceBlock.png">
             <p>Above is the block diagram of the <a href="http://www.sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y0a21yk_e.pdf">proximity sensor datasheet</a> showing pinouts.</p>
             <p>Just as with digitalRead(), in order to see the values you are receiving in your Serial Monitor with Arduino, you must use the Serial.begin() command in your setup() function, and Serial.println() to print the value.</p>
+            <img class="image_75" alt="Arduino IDE with code showing the use of variables and Serial.println()." src="schematics/Variables-In-Class.png">
+            <p>Above you'll find the class example where we used variables for the analog input and digital input values. You may also recall we could create variables to hold the values of the Arduino pins we were using. This way, they are held in memory with a descriptive name, and we can easily update them and/or use them repeatedly in our code. Remember that we also used Serial.begin(9600) where 9600 was the baud rate, and were then able to print out the analog and digital values to the console. The console is available through the top right corner of the IDE (the icon looks kind of like a magnifying glass).</p>
           </div>
           <h3> References </h3>
           <div class="indent">
@@ -295,6 +299,34 @@
           </div>  
       </div>
 
+      <div class="section" id="programming" name="programming">
+        <h2> Programming </h2>
+         <h3> Notes </h3>
+          <div class="indent">
+            <p>We have been practicing programming concepts in Arduino that are transferrable to any programming language, while other languages might have slightly different syntax and work a bit differently.</p>
+            <p>While Arduino is a programming language built for physical computing and working with microcontrollers, P5.js is a language built for creative coding on the web: visuals, sound, and other media. It's an Free and Open Source Software (FLOSS) that has ported all the functionality from the Processing language to Javascript.</p>
+            <p>Below you can see some similarities in the basic program structure between Arduino and P5.js</p>
+            <img class="image_75" alt="Comparison of the P5 web editor and Arduino IDE programming environments" src="schematics/P5Comparison.png">
+
+
+          <h3> Terms </h3>
+          <div class="indent">
+            <p><strong>Variable</strong>: A place in a computer's memory that stores a value and can be referred to by a name. In order to create and use your own variable you must <strong>declare</strong> and <strong>initialize</strong> it. If a language is "strictly typed" that means you must identify what kind of data will be stored in that variable. Arduino is a strictly typed language but P5.js is not. With Arduino for example, we used "int" to say we were creating an integer variable. In P5, we use "let" and javascript figures out the data type when we initialize the variable. Initializing is when we give the variable its first value (=2; *or* ="A string of text"; etc). Variables like LED_BUILTIN or displayHeight are system variables available in the language that you do not have to declare and initialize.</p>
+            <p><strong>Function</strong>: A piece of code that does something. Like variables, programming languages come with functions but you can also define your own. Some functions we've used are digitalWrite() or ellipse(). Not all functions require you to pass through values, but when they do these values are referred to as <strong>arguments</strong>. We can't just call digitalWrite, for example, we call digitalWrite(2, HIGH); where 2 and HIGH are the arguments.</p>
+            <p><strong>Operators</strong>: The symbols in programming languages that allow us to change and compare numbers. <strong>Relational operators</strong> like < "less than" or > "greater than" or == "equals" or != "not equals" allow us to compare values. <strong>Logical operators</strong> like && "and" and || "or" allow us to make composite expressions. <strong>Mathematical operators</strong> are the operators you're used to from arithmetic that allow you to add, substract, divide, find the remainder from division, multiply, etc. Like for any system variables or available functions, the best place to check these for the given language you're working with is in its reference.</p>
+          </div>            
+         
+          </div>
+          <h3> References </h3>
+          <div class="indent">
+              <p><a href="https://www.arduino.cc/en/Reference/VariableDeclaration">Arduino Variables</a></p>
+              <p><a href="https://itp.nyu.edu/physcomp/lessons/programming/variables/">ITP Lab: Variables</a></p> 
+              <p><a href="https://itp.nyu.edu/physcomp/lessons/programming/programming-terms-and-programming-environments/">ITP Tutorial: Programming terms and programming environments</a></p>     
+              <p><a href="https://p5js.org/reference/">P5 Reference</a></p>
+              <p><a href="https://www.openprocessing.org/">Open Processing</a></p>   
+          </div>  
+      </div>
+
       <br><h3>Skip to topic:</h3>
         <p class="indent">
           <a href="classnotes.html#E-Basics">Electricity & Circuits</a> ||
@@ -305,7 +337,9 @@
           <a href="classnotes.html#digitalIO">Digital I/O</a> || 
           <a href="classnotes.html#analogIn">Analog Input</a> || 
           <a href="classnotes.html#datasheets">Datasheets</a> || 
-          <a href="classnotes.html#analogOut">Analog Output</a> 
+          <a href="classnotes.html#analogOut">Analog Output</a> ||
+          <a href="classnotes.html#programming">Programming</a> 
+
         </p>
 
       </div>
