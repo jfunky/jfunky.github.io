@@ -38,7 +38,7 @@
           <a href="classnotes.html#E-Basics">Electricity & Circuits</a> ||
           <a href="classnotes.html#components">Components</a> || 
           <a href="classnotes.html#schematics">Schematic Diagrams</a> ||  
-          <a href="classnotes.html#circuits">Series vs. Series Circuits</a> || 
+          <a href="classnotes.html#circuits">Parallel vs. Series Circuits</a> || 
           <a href="classnotes.html#ohm">Ohm's Law</a> || 
           <a href="classnotes.html#digitalIO">Digital I/O</a> || 
           <a href="classnotes.html#analogIn">Analog Input</a> || 
@@ -357,20 +357,23 @@
          <h3> General steps: </h3>
           <div class="indent">
             <ol>
-              <li><p>Upload a sketch to an arduino that uses the println command to print values from a sensor to the serial monitor. This is the same process as when we uploaded sketches to digitalRead or analogRead a button or analog sensor, respectively. You should check the values you are receiving and do any troubleshooting of your circuit at this step.</p></li>
+              <li><p>Upload a sketch to an arduino that uses the println command to print values from a sensor to the serial monitor. This is the same process as when we uploaded sketches to digitalRead or analogRead a button or analog sensor, respectively. You can use the DigitalReadSerial and AnalogReadSerial arduino example code (under File > Examples > Basics). You should check the values you are receiving and do any troubleshooting of your circuit at this step.</p></li>
               <li><p>When you are confident in your circuit and the data you are printing from the arduino, close the arduino serial monitor and open the p5.serialcontrol application. (If you don't have this application, you can download <a href="https://github.com/p5-serial/p5.serialcontrol/releases">the most recent release from github</a>.)</p></li>
               <li><p><strong>Important Warnings</strong>: Note that you can only have one application connected to your serial port at a time, which is why these instructions include closing the Arduino serial monitor before using the p5.serialcontrol applications. Sometimes errors are caused by multiple applications trying to access the serial port. Some browsers also treat access to serial ports differently. I have noticed accessing serial ports with P5 and the web editor does not work in Firefox, for example.</p></li>
               <li><p>In the P5.serialcontrol application, you can press "list ports" to see which port your arduino is connected to. If you haven't switched ports since you uploaded your code, this should be the same port. Select the port your arduino is conencted to by using the drop down menu under "Selected port." Press open. If you choose to enable the serial console, you will see unexpected results, because this monitor is expecting an ascii-encoded string. Don't worry about this! We will convert it to the correct number in P5.</p></li>
               <li><p>In order for P5 to access data from your serial port, you need to use the <a href="https://github.com/p5-serial/p5.serialport">p5.serialport library</a>. The library must be included as an additional file in the folder where your sketch is located. You can find code examples at the linked github and from class that show what this looks like.</p></li>
-              <li><p>The sample code includes a number of p5.serialport functions that check for data from the indicated port, print possible errors, and handles incoming data. It's okay if these are not 100% clear yet. The unfamiliar syntax here is called a "callback function," where a function is passed as a parameter to another function. The main pieces of code you should look at to use the data sent from arduino are "gotData" and "draw."</p></li>
-              <li><p>The last step is to use the data in a function to do something on your screen!</p></li>
+              <li><p>The sample code includes a number of p5.serialport functions that check for data from the indicated port, print possible errors, and handles incoming data. It's okay if these are not 100% clear yet. The unfamiliar syntax here is called a "callback function," where a function is passed as a parameter to another function. The main pieces of code you should look at to use the data sent from arduino are: serial.open(), where you must update the serial port based on which usb port you plugged your arduino in, the gotData() function, and the draw() function.</p></li>
+              <li><p>The last step is to use the data in a function to do something on your screen! Remember that you are passing data as a string: characters, not numbers. If you want to do math with this data, use the parseInt function (see class example below).</p></li>
+              <li><p>Troubleshooting: Make sure you are using a compatible browser. Chrome seemed to be working for me. If you lose access to your port or start seein NaN (not a number) in your P5 console, try: opening and closing your serial port on the p5.serialcontrol application & restarting P5 or, unplugging and re-plugging your arduino, re-setting the p5.serialcontrol application, & restarting your P5 sketch.</p></li>
             </ol>
           </div>
           <h3> References </h3>
           <div class="indent">
               <p><a href="https://itp.nyu.edu/physcomp/labs/labs-serial-communication/lab-serial-input-to-the-p5-js-ide/">ITP Lab: Serial Communication</a>: Note that we practiced writing and reading String data.</p>
+              <p><a href="https://editor.p5js.org/jas920/sketches/VzktJfq4T">P5 Class example: Necker cube function</a></p>
               <p><a href="https://editor.p5js.org/jas920/sketches/jlJy6SAkH">P5 Class example: digital</a></p>
               <p><a href="https://editor.p5js.org/jas920/sketches/0bbeDduk6">P5 Class example: analog</a></p>
+              <p><a href="https://editor.p5js.org/jas920/sketches/0bbeDduk6">P5 Class example: converting string data to integer data with parseInt()</a></p>
           </div>  
       </div>
 
@@ -379,7 +382,7 @@
           <a href="classnotes.html#E-Basics">Electricity & Circuits</a> ||
           <a href="classnotes.html#components">Components</a> || 
           <a href="classnotes.html#schematics">Schematic Diagrams</a> ||  
-          <a href="classnotes.html#circuits">Series vs. Series Circuits</a> || 
+          <a href="classnotes.html#circuits">Parallel vs. Series Circuits</a> || 
           <a href="classnotes.html#ohm">Ohm's Law</a> || 
           <a href="classnotes.html#digitalIO">Digital I/O</a> || 
           <a href="classnotes.html#analogIn">Analog Input</a> || 
