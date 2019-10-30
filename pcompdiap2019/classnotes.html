@@ -46,7 +46,8 @@
           <a href="classnotes.html#analogOut">Analog Output</a> ||
           <a href="classnotes.html#programming">Programming</a> ||
           <a href="classnotes.html#p5_intro">Learning p5.js</a> ||
-          <a href="classnotes.html#serialToP5">Serial input to P5.js</a> 
+          <a href="classnotes.html#serialToP5">Serial input to P5.js</a> ||
+          <a href="classnotes.html#Motors">Motors</a>          
 
         </p>
 
@@ -377,6 +378,32 @@
           </div>  
       </div>
 
+        <div class="section" id="Motors" name="Motors">
+          <h2> Motors </h2>
+
+          <h3> Terms </h3>
+          <div class="indent">
+            <p><strong>Torque</strong>: A measure of a motor's ability to move weight, or "movement force." Torque is included on motors' datasheets in units like mass/"something."</p>
+            <p><strong>Speed</strong>: A measure of how quickly a motor spins, in "rotations per minute" (rpm).</p>
+          </div>
+
+          <h3> Notes </h3>
+          <div class="indent">
+            <p>Motors will often work within 40-50% of needed. This is useful for testing.</p>
+            <p>Motors will draw more current when they start, to overcome intertia.</p>
+            <p>Anytime you power something that requires more voltage than the arduino supplies, you need a transistor.</p>
+            <p>Motors are designed for continuous motion with little feedback in terms of where you've turned a motor to, or how much. If you want to control things like speed and direction, you should use a motor driver like an H-Bridge or EZDriver.</p>
+            <p>Servo motors do provide feedback about rotation and angle. For other motors, you can get this feedback with a sensor.</p>
+            <p>You can find good junk motors in things like tape decks, CD players, record players, blenders, drills--lots of appliances have motors!</p>
+          </div>
+
+          <h3> References </h3>
+
+          <div class="indent">
+            <p><a href="http://www.makingthingsmove.com/"/>Making Things Move</a> a book & and a blog.</p>
+          </div>
+      </div> <!-- Notes div  -->
+
       <br><h3>Skip to topic:</h3>
         <p class="indent">
           <a href="classnotes.html#E-Basics">Electricity & Circuits</a> ||
@@ -390,7 +417,8 @@
           <a href="classnotes.html#analogOut">Analog Output</a> ||
           <a href="classnotes.html#programming">Programming</a> ||
           <a href="classnotes.html#p5_intro">Learning p5.js</a> ||
-          <a href="classnotes.html#serialToP5">Serial input to P5.js</a> 
+          <a href="classnotes.html#serialToP5">Serial input to P5.js</a> ||
+          <a href="classnotes.html#Motors">Motors</a> 
         </p>
 
       </div>
