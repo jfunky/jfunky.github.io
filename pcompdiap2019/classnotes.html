@@ -47,7 +47,8 @@
           <a href="classnotes.html#programming">Programming</a> ||
           <a href="classnotes.html#p5_intro">Learning p5.js</a> ||
           <a href="classnotes.html#serialToP5">Serial input to P5.js</a> ||
-          <a href="classnotes.html#Motors">Motors</a>          
+          <a href="classnotes.html#Motors">Motors</a>   ||
+          <a href="classnotes.html#P5toArduino">Serial from P5.js to Arduino</a>       
 
         </p>
 
@@ -401,9 +402,33 @@
 
           <div class="indent">
             <p><a href="http://www.makingthingsmove.com/">Making Things Move</a> a book & and a blog.</p>
-            <p><a href="https://create.arduino.cc/editor/jfunky7/71ac5d64-6815-40ec-9909-d57dd834a1ed/preview">Class Arduino Code example: Servo motor angle based on analog sensor</a></p>
-            <p><a href="https://create.arduino.cc/editor/jfunky7/475dba59-170f-4d47-a0da-2ddcee13b8e1/preview">Class Arduino code example: Servo motor angle changing direction with a variable</a></p>
-            <p><a href="https://create.arduino.cc/editor/jfunky7/70ef8597-08e2-4c52-89c6-b7c66e1ab321/preview">Class Arduino code example: DC motor</a></p>
+          </div>
+
+          <h3> Class code examples </h3>
+
+          <div class="indent">
+            <p>Servo motor angle based on analog sensor: <a href="https://create.arduino.cc/editor/jfunky7/71ac5d64-6815-40ec-9909-d57dd834a1ed/preview">Arduino code</a></p>
+            <p>Servo motor angle changing direction with a variable: <a href="https://create.arduino.cc/editor/jfunky7/475dba59-170f-4d47-a0da-2ddcee13b8e1/preview">Arduino code</a></p>
+            <p>DC motor: <a href="https://create.arduino.cc/editor/jfunky7/70ef8597-08e2-4c52-89c6-b7c66e1ab321/preview">Arduino code</a></p>
+          </div>
+      </div> <!-- Notes div  -->
+
+       <div class="section" id="P5toArduino" name="P5toArduino">
+          <h2> Serial from P5.js to Arduino </h2>
+
+          <h3> Notes </h3>
+          <div class="indent">
+            <p>We have been sending serial from Arduino to P5.js. When we have done this in the past, we have sent just one sensor's value. The first two examples below show how we would send values from multiple sensors using a more complex data type: arrays.</p>
+            <p>The next two examples show how to use the P5 serial library method serial.write() to send data from P5.js to Arduino. In Arduino, these values can be used to affect some actuator, like a motor, or lights.</p>
+          </div>
+
+          <h3> Class code examples </h3>
+
+          <div class="indent">
+            <p>Read 2 Analog Values: <a href="https://editor.p5js.org/jas920/sketches/jfJlt4iOT">P5 Code</a>, <a href="https://create.arduino.cc/editor/jfunky7/bc9409d5-925e-48d2-bf01-036868ed86b8/preview">Arduino code</a></p>
+            <p>Read 2 Analog Values with averaging: <a href="https://editor.p5js.org/jas920/sketches/EVYwhW1ae">P5 Code</a>, <a href="https://create.arduino.cc/editor/jfunky7/bc9409d5-925e-48d2-bf01-036868ed86b8/preview">Arduino code (same as previous)</a></p>
+            <p>P5 to Arduino (LED Fade): <a href="https://editor.p5js.org/jas920/sketches/3C67uHyKo">P5 code</a>, <a href="https://create.arduino.cc/editor/jfunky7/a0fac2dc-a0ba-428f-b37d-afa62a083aee/preview">Arduino code</a></p>
+            <p>P5 to Arduino (servo angle): <a href="https://editor.p5js.org/jas920/sketches/ODGNPi1Zi">P5 code</a>, <a href="https://create.arduino.cc/editor/jfunky7/c6f2428e-6f27-4f17-a339-87ccebba7ea2/preview">Arduino code</a></p>
           </div>
       </div> <!-- Notes div  -->
 
@@ -421,7 +446,8 @@
           <a href="classnotes.html#programming">Programming</a> ||
           <a href="classnotes.html#p5_intro">Learning p5.js</a> ||
           <a href="classnotes.html#serialToP5">Serial input to P5.js</a> ||
-          <a href="classnotes.html#Motors">Motors</a> 
+          <a href="classnotes.html#Motors">Motors</a> ||
+          <a href="classnotes.html#P5toArduino">Serial from P5.js to Arduino</a>
         </p>
 
       </div>
