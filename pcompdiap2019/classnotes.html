@@ -48,7 +48,8 @@
           <a href="classnotes.html#p5_intro">Learning p5.js</a> ||
           <a href="classnotes.html#serialToP5">Serial input to P5.js</a> ||
           <a href="classnotes.html#Motors">Motors</a>   ||
-          <a href="classnotes.html#P5toArduino">Serial from P5.js to Arduino</a>       
+          <a href="classnotes.html#P5toArduino">Serial from P5.js to Arduino</a>||
+          <a href="ClassesMedia">P5 Classes & Media: Image, Video, Sound</a>       
 
         </p>
 
@@ -426,10 +427,41 @@
 
           <div class="indent">
             <p><a href="https://editor.p5js.org/jas920/sketches/DqQJe81Tj">First array example</a></p>
+            <p><a href="https://editor.p5js.org/jas920/sketches/cOfFnXDBG">First loop example</a></p>
             <p>Read 2 Analog Values: <a href="https://editor.p5js.org/jas920/sketches/jfJlt4iOT">P5 Code</a>, <a href="https://create.arduino.cc/editor/jfunky7/bc9409d5-925e-48d2-bf01-036868ed86b8/preview">Arduino code</a></p>
             <p>Read 2 Analog Values with averaging: <a href="https://editor.p5js.org/jas920/sketches/EVYwhW1ae">P5 Code</a>, <a href="https://create.arduino.cc/editor/jfunky7/bc9409d5-925e-48d2-bf01-036868ed86b8/preview">Arduino code (same as previous)</a></p>
             <p>P5 to Arduino (LED Fade): <a href="https://editor.p5js.org/jas920/sketches/3C67uHyKo">P5 code</a>, <a href="https://create.arduino.cc/editor/jfunky7/a0fac2dc-a0ba-428f-b37d-afa62a083aee/preview">Arduino code</a></p>
             <p>P5 to Arduino (servo angle): <a href="https://editor.p5js.org/jas920/sketches/ODGNPi1Zi">P5 code</a>, <a href="https://create.arduino.cc/editor/jfunky7/c6f2428e-6f27-4f17-a339-87ccebba7ea2/preview">Arduino code</a></p>
+          </div>
+      </div> <!-- Notes div  -->
+
+       <div class="section" id="ClassesMedia" name="ClassesMedia">
+          <h2> P5 Classes & Media: Image, Video, Sound </h2>
+
+          <h3> Notes </h3>
+          <p>A <a href="https://p5js.org/reference/#/p5/function">function</a> is a set of programming statements that do something. When declaring a function in P5, you can create a name and any parameters, which are placeholders for any variables you may want to modify when you call your function.</p>
+          <p>A <a href="https://p5js.org/reference/#/p5/class">class</a> is like a template for objects. A common metaphor is that the class is a cookie cutter and an object is the cookie. </p>
+          <p>The language used to describe creating an object from a class is called "instantiating" an object, or an "instance."</p>
+          <p>Javascript is <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Introducing">asynchronous</a>. A lot of the code we've run so far has been synchronous, which means it executes in order. However, in some cases javascript will continue executing code that follows, even when code earlier in the program hasn't completed executing yet. You might notice this when you are loading images, video, sound files, or data files. To make sure the media/files have loaded by the time you use them, you can load them in the <a href="https://p5js.org/reference/#/p5/preload">preload function</a> rather than in setup.</p>
+          <p>Another way to handle asynchronicity is by using a callback function: this is a function passed through to another function as a parameter. The function passed through as a parameter is not executed right away. Instead, it is called once some work is done or a relevant event happens.</p>
+
+          <h3> Class code examples </h3>
+          <p>These examples show how to generalize the code for <a href="https://editor.p5js.org/jas920/sketches/uHC9ap2PG">a bouncing ball</a> with <a href="https://editor.p5js.org/jas920/sketches/Q-eDoovJA">(1) functions</a> and <a href="https://editor.p5js.org/jas920/sketches/Q-eDoovJA">(2) classes</a>. </p>
+          <p>These example show how to create <a href="https://editor.p5js.org/jas920/sketches/mOvUJ_KuK">multiple objects with classes</a> and how to create <a href="https://editor.p5js.org/jas920/sketches/qIkquNtZR">an array of objects</a>.</p>
+          <p><a href="https://editor.p5js.org/jas920/sketches/hnQZdOyhi">Load an image</a></p>
+          <p><a href="https://editor.p5js.org/jas920/sketches/NfHj5wwB8">Load video</a></p>
+          <p><a href="https://editor.p5js.org/jas920/sketches/CzrBkpHLgl">Load sound</a></p>
+          <p>You can also find several examples on the <a href="https://p5js.org/examples/">P5 Example page</a></p>
+
+          <div class="indent">
+          </div>
+      </div> <!-- Notes div  -->
+
+       <div class="section" id="SystemBOM" name="SystemBOM">
+          <h2> System Diagrams & BOM </h2>
+
+          <h3> Notes </h3>
+          <div class="indent">
           </div>
       </div> <!-- Notes div  -->
 
@@ -448,7 +480,8 @@
           <a href="classnotes.html#p5_intro">Learning p5.js</a> ||
           <a href="classnotes.html#serialToP5">Serial input to P5.js</a> ||
           <a href="classnotes.html#Motors">Motors</a> ||
-          <a href="classnotes.html#P5toArduino">Serial from P5.js to Arduino</a>
+          <a href="classnotes.html#P5toArduino">Serial from P5.js to Arduino</a>||
+          <a href="ClassesMedia">P5 Classes & Media: Image, Video, Sound</a>
         </p>
 
       </div>
